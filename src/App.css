@@ -1,33 +1,43 @@
-.App {
-  text-align: center;
+.AppBar {
+  padding: 25px;
+  font-size: 2em;
+}
+.playArea1 {
+  grid-area: p1;
+}
+.playerActions1 {
+  grid-area: a1;
+}
+.playArea2 {
+  grid-area: p2;
+}
+.playerActions2 {
+  grid-area: a2;
+}
+.geishaCards {
+  grid-area: g;
+}
+.drawPile {
+  grid-area: d;
+}
+.container {
+  margin-top: 150px;
+  display: grid;
+  grid-template-rows: 100px 100px 150px 100px 100px; 
+  grid-template-areas: 
+    ".  .  p1  p1  p1  p1  p1  p1  .  ."
+    ".  .  .   a1  a1  a1  a1  .   .  ."
+    ".  g  g   g   g   g   g   g   d  ."
+    ".  .  .   a2  a2  a2  a2  .   .  ."
+    ".  .  p2  p2  p2  p2  p2  p2  .  .";
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+  justify-items: stretch;
+  align-items: stretch;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.container > div {
+  padding: 5px;
+  border: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
