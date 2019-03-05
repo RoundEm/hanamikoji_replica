@@ -1,18 +1,25 @@
 .AppBar {
-  padding: 25px;
+  padding: 5px;
   font-size: 2em;
 }
-.playArea1 {
-  grid-area: p1;
+
+.playerHand1 {
+  grid-area: h1;
+}
+.playerHand2 {
+  grid-area: h2;
 }
 .playerActions1 {
   grid-area: a1;
 }
-.playArea2 {
-  grid-area: p2;
-}
 .playerActions2 {
   grid-area: a2;
+}
+.playArea1 {
+  grid-area: p1;
+}
+.playArea2 {
+  grid-area: p2;
 }
 .geishaCards {
   grid-area: g;
@@ -20,24 +27,35 @@
 .drawPile {
   grid-area: d;
 }
-.container {
-  margin-top: 150px;
+
+.grid-container {
+  margin-top: 70px;
   display: grid;
-  grid-template-rows: 100px 100px 150px 100px 100px; 
+  grid-template-rows: 80px 80px 160px 90px 160px 80px 80px;
   grid-template-areas: 
-    ".  .  p1  p1  p1  p1  p1  p1  .  ."
-    ".  .  .   a1  a1  a1  a1  .   .  ."
-    ".  g  g   g   g   g   g   g   d  ."
-    ".  .  .   a2  a2  a2  a2  .   .  ."
-    ".  .  p2  p2  p2  p2  p2  p2  .  .";
+    ". .  .  .  h1 h1 h1 .  .  ."
+    ". a1 a1 a1 h1 h1 h1 .  .  ."
+    ". p1 p1 p1 p1 p1 p1 p1 .  ."
+    ". g  g  g  g  g  g  g  d  ."
+    ". p2 p2 p2 p2 p2 p2 p2 .  ."
+    ". .  h2 h2 h2 a2 a2 a2 . ."
+    ". .  h2 h2 h2 .  .  .  . .";
   grid-column-gap: 5px;
   grid-row-gap: 10px;
   justify-items: stretch;
   align-items: stretch;
 }
-
-.container > div {
+.grid-container > div {
   padding: 5px;
+  border: 1px solid black;
+}
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.flex-container > div {
+  padding: 15px;
   border: 1px solid black;
 }
 
