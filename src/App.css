@@ -46,9 +46,6 @@ div.top-header {
   grid-area: g;
   background-color: #001167;
 }
-.geishaCards > div {
-  grid-area: g;
-}
 .draw-pile {
   grid-area: d;
   font-size: 1.2em;
@@ -73,9 +70,7 @@ div.top-header {
     ". h2 h2 h2 h2 .  .  .  . .";
   grid-column-gap: 5px;
   grid-row-gap: 10px;
-  justify-items: stretch;
   align-items: stretch;
-  
 }
 .grid-container > div {
   padding: 1px;
