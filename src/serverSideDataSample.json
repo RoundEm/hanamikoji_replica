@@ -1,0 +1,24 @@
+{"players": {
+    "player_1": {
+        "name": "P1",
+        "actions_used_this_round": [],
+        "item_cards_placed": [],
+        "current_turn": "true",
+        "geishas_won": 0,
+        "charm_points": 0
+    },
+    "player_2": {
+        "name": "P2",
+        "actions_used_this_round": [],
+        "item_cards_placed": [],
+        "current_turn": "false",
+        "geishas_won": 0,
+        "charm_points": 0
+    }
+},
+"current_game_info": {
+    "round_number": "",
+    "round_phase": "",
+    "last_player_to_play": "",
+    "winner": ""
+}}
