@@ -1,3 +1,6 @@
+I'm designing this app to be a web-based replica of the Hanamikoji card game designed by Kota Nakayama for [EmperorS4 Technology Co., Ltd.](https://en.emperors4.com/game/hanamikoji) and [Deep Water Games](https://www.deepwatergaming.com). I recently purchased this simple (but frustrating!) 2 player game and I've really enjoyed it so I figured it'd be fun and not terribly difficult to try and replicate it in the browser, particularly because I've recently been brushing up on CSS grid and flexbox and I thought that these tools would lend themselves nicely to the layout of the game board/sections. I'm also aiming to set up authentication and allow 2 players to sign in and play against eachother in real-time and also save/resume in-progress games. 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
