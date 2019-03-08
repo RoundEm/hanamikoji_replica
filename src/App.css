@@ -23,6 +23,19 @@ div.top-header {
 .player-2-actions {
   grid-area: a2;
 }
+.player-1-actions, .player-2-actions {
+  font-size: .8em;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.player-1-actions div, .player-2-actions div {
+  flex: 1;
+  border: 1px solid #dca9a9;
+  border-radius: 3px;
+  padding: 34px 0;
+  margin: 0 2px;
+}
 .player-1-items {
   grid-area: p1;
 }
@@ -38,7 +51,10 @@ div.top-header {
 }
 .draw-pile {
   grid-area: d;
-  background-color: #001167
+  font-size: 1.2em;
+  color: #dca9a9;
+  background-color: #001167;
+  justify-content: center;
 }
 
 .grid-container {
@@ -68,15 +84,21 @@ div.top-header {
 }
 .flex-container {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  text-align: center;
 }
 .flex-container > div {
-  padding: 32px 0;
+  position: relative;
+  text-align: center;
   margin: 2px;
   flex: 1;
   background-color: white;
+  border: 1px solid #dca9a9;
   border-radius: 3px;
 }
+/* .charm-points {
+  position: absolute;
+}
+.vp-status {
+  position: absolute;
+} */
 

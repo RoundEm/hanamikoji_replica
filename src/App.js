@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
-import AppBar from '@material-ui/core/AppBar'
 import GeishaCard from './GeishaCard'
+import ActionMarker from './ActionMarker'
 import componentData from './gameComponents.json'
 
 
@@ -10,20 +10,22 @@ class App extends Component {
     super(props)
     this.state = {
       gameComponents: [],
-      itemCards: [] 
+      itemCards: [],
+      actionMarkers: [] 
     }
   }
   componentDidMount() {
     this.setState({
       gameComponents: componentData.geisha_cards,
-      itemCards: componentData.item_cards
+      itemCards: componentData.item_cards,
+      actionMarkers: componentData.action_markers
     })
   }
-  componentDidUpdate() {
-    console.log('CDU state: ', this.state)
-  }
+  // componentDidUpdate() {
+  //   console.log('CDU state: ', this.state)
+  // }
   render() {
-    console.log('comp data: ', this.state.componentData)
+    console.log('state: ', this.state)
     return (
       <div>
         <div className="top-header">
@@ -37,7 +39,12 @@ class App extends Component {
           </div>
 
           <div className="player-1-actions play-area">
-            Player 1 actions
+            {this.state.actionMarkers.map(action => (
+              <ActionMarker 
+                key={action.name}
+                name={action.name}
+              />
+            ))}
           </div>
 
           <div className="player-1-items play-area">
@@ -47,6 +54,7 @@ class App extends Component {
           <div className="geisha-cards flex-container">
             {this.state.gameComponents.map(geisha => (
               <GeishaCard 
+                key={geisha.id}
                 color={geisha.color}
                 charmPoints={geisha.charm_points}
                 vpStatus={geisha.victory_point_status}
@@ -55,7 +63,7 @@ class App extends Component {
           </div>
 
           <div className="draw-pile flex-container">
-            <div>Draw</div>
+            Draw
           </div>
 
           <div className="player-2-hand play-area">
@@ -63,7 +71,12 @@ class App extends Component {
           </div>
 
           <div className="player-2-actions play-area">
-            Player 2 actions
+            {this.state.actionMarkers.map(action => (
+              <ActionMarker 
+                key={action.name}
+                name={action.name}
+              />
+            ))}
           </div>
 
           <div className="player-2-items play-area">
