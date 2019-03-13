@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import './App.css'
 import GeishaCard from './GeishaCard'
 import ActionMarker from './ActionMarker'
+import DrawerMenu from './DrawerMenu'
 import componentData from './gameComponents.json'
-
+import Drawer from '@material-ui/core/Drawer'
+import MenuIcon from '@material-ui/icons/Menu'
 
 class App extends Component {
   constructor(props) {
@@ -11,26 +13,47 @@ class App extends Component {
     this.state = {
       gameComponents: [],
       itemCards: [],
-      actionMarkers: [] 
+      actionMarkers: [],
+      drawerOpen: false
     }
   }
   componentDidMount() {
     this.setState({
       gameComponents: componentData.geisha_cards,
       itemCards: componentData.item_cards,
-      actionMarkers: componentData.action_markers
+      actionMarkers: componentData.action_markers,
     })
   }
   // componentDidUpdate() {
   //   console.log('CDU state: ', this.state)
   // }
+  handleDrawerToggle = () => {
+    console.log('handleToggle ran')
+    this.setState({
+      drawerOpen: !this.state.drawerOpen
+    })
+  }
   render() {
     console.log('state: ', this.state)
     return (
-      <div>
+      <React.Fragment>
+
         <div className="top-header">
+          <MenuIcon 
+            className="menu-icon" 
+            onClick={this.handleDrawerToggle}
+            fontSize="large"
+          />
           <header>Hanamikoji Card Game Replica</header>
         </div>
+
+        <Drawer
+          children={<DrawerMenu />}
+          anchor="right"
+          open={this.state.drawerOpen}
+          // className="menu-drawer"
+          variant="persistent"
+        />
 
         <div className="grid-container">
 
@@ -84,7 +107,7 @@ class App extends Component {
           </div>
 
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
