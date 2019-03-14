@@ -27,10 +27,15 @@ class App extends Component {
   // componentDidUpdate() {
   //   console.log('CDU state: ', this.state)
   // }
-  handleDrawerToggle = () => {
-    console.log('handleToggle ran')
+  handleDrawerOpen = () => {
     this.setState({
-      drawerOpen: !this.state.drawerOpen
+      drawerOpen: true
+    })
+  }
+  handleDrawerClose = () => {
+    console.log('closing')
+    this.setState({
+      drawerOpen: false
     })
   }
   render() {
@@ -41,17 +46,19 @@ class App extends Component {
         <div className="top-header">
           <MenuIcon 
             className="menu-icon" 
-            onClick={this.handleDrawerToggle}
+            onClick={this.handleDrawerOpen}
             fontSize="large"
           />
           <header>Hanamikoji Card Game Replica</header>
         </div>
 
         <Drawer
-          children={<DrawerMenu />}
-          anchor="right"
+          children={
+            <DrawerMenu closeDrawer={this.handleDrawerClose} 
+          />}
           open={this.state.drawerOpen}
-          // className="menu-drawer"
+          anchor="right"
+          className="menu-drawer"
           variant="persistent"
         />
 
